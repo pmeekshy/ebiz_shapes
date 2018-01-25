@@ -1,0 +1,30 @@
+
+@base <http://data.nxp.com/shape/ebiz/> .
+@prefix plm: <http://data.nxp.com/def/plm/> .
+@prefix ebiz: <http://data.nxp.com/def/ebiz/> .
+@prefix dc:<http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+
+#Instance#
+
+
+plm:935310868557
+    a plm:SalesItem ;
+    dc:relation <http://data.nxp.com/id/plm/basicType/scl711kc1fue2> ;
+    ebiz:BUY_DIRECT false;
+    ebiz:HALOGEN_FREE "Yes";
+    ebiz:MATERIAL_COMPOSITION_URL <http://www.nxp.com/mcds/SCL711KC1FUE2.pdf>;
+    ebiz:PART_NUM "SCL711KC1FUE2" ;
+    ebiz:PART_STATUS "Not Recommended for New Designs" ;
+    ebiz:PP_LAST_UPDATE_DTE	2018-01-25T04:00:59Z ^^ xsd:dateTime;
+    ebiz:ROHS_COA_REPORT_URL <http://www.nxp.com/webapp/search.partspiecedetail.framework?PART_NUMBER=SCL711KC1FUE2>;
+    ebiz:PBFREE "Yes";
+    ebiz:ROHS "Yes";
+    ebiz:SAMPLABLE  false;
+    ebiz:SI_PSI_FLG "N";
+    ebiz:SI_SEARCHABLE_FLG "N";
+    ebiz:SI_WEB_VISIBLE_FLG false .
