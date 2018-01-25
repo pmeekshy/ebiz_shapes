@@ -65,7 +65,7 @@
 		sh:datatype xsd:string ;
 		sh:in ("Yes" "No" "Not Applicable" "Contact 3rd Party");
 	] ;
- sh:property [
+ 	sh:property [
 		sh:path ebiz:SI_WEB_VISIBLE_FLG ;
 		sh:minCount 1 ;
 		sh:maxCount 1 ;
