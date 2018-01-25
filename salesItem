@@ -1,0 +1,154 @@
+@base <http://data.nxp.com/shape/ebiz/> .
+@prefix plm: <http://data.nxp.com/def/plm/> .
+@prefix ebiz: <http://data.nxp.com/def/ebiz/> .
+@prefix dc:<http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+
+#SHACL Modeling#
+
+<SalesItem> a sh:NodeShape ;
+	sh:targetClass plm:SalesItem ;
+	sh:nodeKind sh:IRI;
+
+	sh:property [
+		sh:path dc:relation ;
+		sh:maxCount 1 ;
+		sh:nodeKind sh:IRI ;
+	] ;
+	sh:property [
+		sh:path rdf:type ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+		sh:hasValue plm:SalesItem ;
+	] ;
+
+	sh:property [
+		sh:path ebiz:PART_NUM ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:maxLength 30 ;
+	] ;
+	sh:property [
+		sh:path ebiz:PART_STATUS ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:in ("End of Life" "No Longer Manufactured" "Active" "Development" "Not Recommended for New Designs" "Qualification");
+	] ;
+	 sh:property [
+		sh:path ebiz:SI_PSI_FLG ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:string ; 
+		sh:in ("N" "Y");
+	] ;
+	sh:property [
+		sh:path ebiz:SI_SEARCHABLE_FLG ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:in ("N" "Y");
+	] ;
+			sh:property [
+		sh:path ebiz:PBFREE ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:string ; 
+		sh:in ("Yes" "No" "Not Applicable" "Contact 3rd Party");
+	] ;
+		sh:property [
+		sh:path ebiz:ROHS ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:in ("Yes" "No" "Not Applicable" "Contact 3rd Party");
+	] ;
+ sh:property [
+		sh:path ebiz:SI_WEB_VISIBLE_FLG ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:boolean ; 
+	] ; 
+ 
+	sh:property [
+		sh:path ebiz:HALOGEN_FREE;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:in ("No" "Yes") ;
+	] ;
+		 sh:property [
+		sh:path ebiz:BUY_DIRECT;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:boolean ;
+	] ;
+
+	sh:property [
+		sh:path ebiz:SAMPLABLE ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:boolean ;
+	] ;
+	 sh:property [
+		sh:path ebiz:LEAD_TIME ;
+		sh:minCount 0 ;
+		sh:maxCount  1;
+		sh:datatype xsd:string ;
+	] ;
+	 sh:property [
+		sh:path ebiz:MATERIAL_COMPOSITION_URL ;
+		sh:minCount 0 ;
+		sh:maxCount 1 ;
+		sh:nodeKind sh:IRI;
+#    sh:datatype rdf:IRI ;
+	] ;
+	 sh:property [
+		sh:path ebiz:BUDGET_PRICE ;
+		sh:minCount 0 ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:decimal ;
+	] ;
+	 sh:property [
+		sh:path ebiz:BUDGET_QTY ;
+		sh:minCount 0 ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:decimal ;
+	] ;
+	 sh:property [
+		sh:path ebiz:PP_LAST_UPDATE_DTE ;
+		sh:minCount 0 ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:dateTime ;
+	] ;
+	 sh:property [
+		sh:path ebiz:LAST_BUY_DTE  ;
+		sh:minCount 0 ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:dateTime ;
+	] ;
+	 sh:property [
+		sh:path ebiz:LAST_DELIVERY_DTE  ;
+		sh:minCount 0 ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:dateTime ;
+	] ;
+		 sh:property [
+		sh:path ebiz:SALES_ITEM_NO_RECOMMEND_FLG   ;
+		sh:minCount 0 ;
+		sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:in ("No" "Yes");
+	] ;
+		 sh:property [
+		sh:path ebiz:ROHS_COA_REPORT_URL  ;
+		sh:minCount 0 ;
+		sh:maxCount 1 ;
+		sh:nodeKind sh:IRI;
+#    sh:datatype rdf:IRI ;
+	] ;
+ 
+	sh:closed true ;
+.
